@@ -1,13 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Sistema de control de stock para una dietética.">
+    <title>Dietetica Saludable | Control de stock</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <header class="encabezado">
+        <a class="marca" href="#inicio" aria-label="Ir al inicio de Dietética Saludable">
+            <span aria-hidden="true">🌿</span>
+            <span>Dietetica Saludable</span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul class="navegacion">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nuevo-producto">Agregar producto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section class="bienvenida" aria-labelledby="titulo-principal">
+            <p class="texto-destacado">Control de inventario</p>
+            <h1 id="titulo-principal">Stock de productos a granel</h1>
+            <p>Administrá los productos de la dietética y consultá rápidamente cuáles son aptos para celíacos.</p>
+        </section>
+
+        <section class="resumen-stock" aria-labelledby="titulo-resumen">
+            <h2 id="titulo-resumen">Resumen del stock</h2>
+
+            <div class="tarjetas-resumen">
+                <article class="tarjeta">
+                    <h3>Productos registrados</h3>
+                    <p id="cantidad-productos">0</p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Kilos disponibles</h3>
+                    <p id="kilos-disponibles">0 kg</p>
+                </article>
+
+                <article class="tarjeta tarjeta-tacc">
+                    <h3>Productos sin TACC</h3>
+                    <p id="cantidad-sin-tacc">0</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="nuevo-producto" class="seccion-formulario" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Agregar un producto</h2>
+
+            <form id="formulario-producto">
+                <div class="campo-formulario">
+                    <label for="nombre-producto">Nombre del producto</label>
+                    <input id="nombre-producto" name="nombre" type="text" placeholder="Ej.: Almendras crudas" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="stock-producto">Stock disponible (kg)</label>
+                    <input id="stock-producto" name="stock" type="number" min="0" step="0.01" placeholder="Ej.: 4.5" required>
+                </div>
+
+                <div class="campo-checkbox">
+                    <input id="apto-celiacos" name="sinTacc" type="checkbox">
+                    <label for="apto-celiacos">Producto apto para celíacos (sin TACC)</label>
+                </div>
+
+                <button type="submit">Guardar producto</button>
+            </form>
+
+            <p id="mensaje-formulario" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="productos" class="seccion-productos" aria-labelledby="titulo-productos">
+            <div class="encabezado-seccion">
+                <div>
+                    <h2 id="titulo-productos">Productos registrados</h2>
+                    <p>Buscá un producto o filtrá por condición alimentaria.</p>
+                </div>
+
+                <div class="filtros">
+                    <label for="buscar-producto">Buscar producto</label>
+                    <input id="buscar-producto" type="search" placeholder="Escribí un nombre">
+
+                    <label for="filtro-tacc">Mostrar</label>
+                    <select id="filtro-tacc">
+                        <option value="todos">Todos los productos</option>
+                        <option value="sin-tacc">Solo sin TACC</option>
+                        <option value="con-tacc">Con o puede contener TACC</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="contenedor-tabla">
+                <table>
+                    <caption>Listado de productos disponibles en la dietética</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Stock disponible</th>
+                            <th scope="col">Condición alimentaria</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-productos">
+                        <tr id="mensaje-sin-productos">
+                            <td colspan="4">Todavía no hay productos registrados.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dietetica Saludable. Sistema de control de stock.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
