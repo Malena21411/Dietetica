@@ -401,3 +401,273 @@ button:focus{
 .filtros select{
     cursor:pointer;
 }
+
+/*==============================
+=             TABLA            =
+==============================*/
+
+.contenedor-tabla{
+    width:100%;
+    overflow-x:auto;
+    border-radius:var(--radio);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:750px;
+    background:var(--color-blanco);
+}
+
+caption{
+    text-align:left;
+    font-weight:700;
+    margin-bottom:18px;
+    color:var(--color-gris);
+}
+
+thead{
+    background:var(--color-verde);
+}
+
+thead th{
+    color:var(--color-blanco);
+    padding:18px;
+    text-align:left;
+    font-size:15px;
+    letter-spacing:.5px;
+}
+
+tbody td{
+    padding:18px;
+    border-bottom:1px solid var(--color-borde);
+    vertical-align:middle;
+}
+
+tbody tr{
+    transition:var(--transicion);
+}
+
+tbody tr:hover{
+    background:#FBFAF5;
+}
+
+tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/*==============================
+=      ESTADO SIN PRODUCTOS    =
+==============================*/
+
+#mensaje-sin-productos td{
+    text-align:center;
+    color:var(--color-gris);
+    padding:35px;
+    font-style:italic;
+}
+
+/*==============================
+=      BADGE SIN TACC          =
+==============================*/
+
+.badge-tacc{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#EAF8EA;
+    color:#2F7D32;
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.badge-no-tacc{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#FFF1F0;
+    color:#B3261E;
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+}
+
+/*==============================
+=     BOTONES DE ACCIONES      =
+==============================*/
+
+.acciones{
+    display:flex;
+    gap:10px;
+}
+
+.btn-editar{
+    background:var(--color-verde);
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:10px 14px;
+    cursor:pointer;
+    transition:var(--transicion);
+}
+
+.btn-editar:hover{
+    background:var(--color-verde-hover);
+}
+
+.btn-eliminar{
+    background:#D9534F;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:10px 14px;
+    cursor:pointer;
+    transition:var(--transicion);
+}
+
+.btn-eliminar:hover{
+    background:#C9302C;
+}
+
+/*==============================
+=           FOOTER             =
+==============================*/
+
+footer{
+    margin-top:60px;
+    background:var(--color-verde);
+    color:white;
+    text-align:center;
+    padding:28px;
+    font-size:.95rem;
+}
+
+/*==============================
+=        ANIMACIONES           =
+==============================*/
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.bienvenida,
+.resumen-stock,
+.seccion-formulario,
+
+.seccion-productos{
+    animation:aparecer .5s ease;
+
+}
+
+/*==============================
+=        SCROLLBAR             =
+==============================*/
+
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#EFEAD9;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--color-verde);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--color-verde-hover);
+}
+
+/*==============================
+=        RESPONSIVE            =
+==============================*/
+
+@media (max-width:900px){
+    .encabezado{
+        flex-direction:column;
+        gap:18px;
+        text-align:center;
+    }
+
+    .navegacion{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .bienvenida{
+        padding:35px;
+    }
+
+    .bienvenida h1{
+        font-size:2.2rem;
+    }
+
+    .encabezado-seccion{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .filtros{
+        width:100%;
+    }
+}
+
+@media (max-width:600px){
+    main{
+        width:95%;
+    }
+
+    .bienvenida,
+    .seccion-formulario,
+    .seccion-productos{
+        padding:25px;
+    }
+
+    .tarjetas-resumen{
+        grid-template-columns:1fr;
+    }
+
+    .bienvenida h1{
+        font-size:1.8rem;
+    }
+
+    button{
+        width:100%;
+        justify-content:center;
+    }
+
+    .acciones{
+        flex-direction:column;
+    }
+
+    .btn-editar,
+    .btn-eliminar{
+        width:100%;
+    }
+    table{
+        min-width:650px;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+    *{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto;
+    }
+}
