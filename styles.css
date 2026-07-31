@@ -202,3 +202,202 @@ main{
 .tarjeta-tacc{
     border-color:var(--color-exito);
 }
+
+/*==============================
+=          FORMULARIO          =
+==============================*/
+
+.seccion-formulario{
+    background:var(--color-blanco);
+    border-radius:var(--radio);
+    padding:40px;
+    margin-bottom:45px;
+    box-shadow:0 8px 24px var(--color-sombra);
+}
+
+.seccion-formulario h2{
+    color:var(--color-marron);
+    margin-bottom:30px;
+}
+
+#formulario-producto{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+/*==============================
+=      CAMPOS FORMULARIO       =
+==============================*/
+
+.campo-formulario{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.campo-formulario label{
+    font-weight:700;
+    color:var(--color-texto);
+}
+
+.campo-formulario input{
+    width:100%;
+    padding:14px 16px;
+    border:2px solid var(--color-borde);
+    border-radius:10px;
+    background:#fff;
+    font-size:16px;
+    transition:var(--transicion);
+}
+
+.campo-formulario input::placeholder{
+    color:#999;
+}
+
+.campo-formulario input:hover{
+    border-color:#B8B3A5;
+}
+
+.campo-formulario input:focus{
+    outline:none;
+    border-color:var(--color-verde);
+    box-shadow:0 0 0 4px rgba(74,124,89,.15);
+}
+
+/*==============================
+=         CHECKBOX             =
+==============================*/
+
+.campo-checkbox{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 0;
+}
+
+.campo-checkbox input{
+    width:20px;
+    height:20px;
+    accent-color:var(--color-verde);
+    cursor:pointer;
+}
+
+.campo-checkbox label{
+    cursor:pointer;
+    font-weight:700;
+    color:var(--color-texto);
+}
+
+/*==============================
+=           BOTONES            =
+==============================*/
+
+button{
+    align-self:flex-start;
+    padding:14px 30px;
+    border:none;
+    border-radius:10px;
+    background:var(--color-marron);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:var(--transicion);
+    box-shadow:0 6px 15px rgba(139,105,20,.25);
+}
+
+button:hover{
+    background:#73540F;
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:translateY(0);
+}
+
+button:focus{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(139,105,20,.25);
+}
+
+/*==============================
+=       MENSAJE FORMULARIO     =
+==============================*/
+
+#mensaje-formulario{
+    margin-top:18px;
+    font-weight:700;
+    color:var(--color-verde);
+    min-height:22px;
+}
+
+/*==============================
+=       SECCIÓN PRODUCTOS      =
+==============================*/
+
+.seccion-productos{
+    background:var(--color-blanco);
+    border-radius:var(--radio);
+    padding:40px;
+    box-shadow:0 8px 24px var(--color-sombra);
+    margin-bottom:45px;
+}
+
+.encabezado-seccion{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.encabezado-seccion h2{
+    color:var(--color-marron);
+    margin-bottom:8px;
+}
+
+.encabezado-seccion p{
+    color:var(--color-gris);
+}
+
+/*==============================
+=          FILTROS             =
+==============================*/
+
+.filtros{
+    display:grid;
+    gap:10px;
+    min-width:280px;
+}
+
+.filtros label{
+    font-size:.95rem;
+    font-weight:700;
+    color:var(--color-texto);
+}
+
+.filtros input,
+
+.filtros select{
+    width:100%;
+    padding:12px 14px;
+    border:2px solid var(--color-borde);
+    border-radius:10px;
+    background:white;
+    font-size:15px;
+    transition:var(--transicion);
+}
+
+.filtros input:focus,
+
+.filtros select:focus{
+    outline:none;
+    border-color:var(--color-verde);
+    box-shadow:0 0 0 4px rgba(74,124,89,.15);
+}
+
+.filtros select{
+    cursor:pointer;
+}
